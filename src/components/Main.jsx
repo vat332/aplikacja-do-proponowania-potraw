@@ -5,11 +5,6 @@ import IngredientsList from "./IngredientsList";
 const Main = () => {
   const [ingredients, setIngredients] = useState([]);
   const [recipeShown, setRecipeShown] = useState(false);
-  const ingredientListItems = ingredients.map((ingredient) => (
-    <li key={ingredient} className="list-ingredients">
-      {ingredient}
-    </li>
-  ));
 
   const handleSubmit = (formData) => {
     setIngredients((prev) => [...prev, formData.get("ingredient")]);
@@ -29,8 +24,11 @@ const Main = () => {
         />
         <button type="submit">Dodaj składnik</button>
       </form>
-      {ingredientListItems.length > 0 && (
-        <IngredientsList ingredients={ingredients} toggleRecipeShown={toggleRecipeShown} />
+      {ingredients.length > 0 && (
+        <IngredientsList
+          ingredients={ingredients}
+          toggleRecipeShown={toggleRecipeShown}
+        />
       )}
       {recipeShown && <ClaudeRecipe />}
     </main>

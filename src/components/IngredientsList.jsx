@@ -1,9 +1,14 @@
 const IngredientsList = (props) => {
+  const ingredientListItems = props.ingredients.map((ingredient) => (
+    <li key={ingredient} className="list-ingredients">
+      {ingredient}
+    </li>
+  ));
   return (
     <section>
       <h2>Lista składników</h2>
       <ul className="ingredients-list" aria-live="polite">
-        {props.ingredientListItems}
+        {ingredientListItems}
       </ul>
       <div className="get-recipe-container">
         <div>
