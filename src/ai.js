@@ -1,9 +1,9 @@
-import { HfInterface } from "@hugginface/interface";
+import { InferenceClient } from "@huggingface/inference";
 import process from "process";
 
 const SYSTEM_PROMPT = `Jesteś asystentem, który otrzymuje listę składników od użytkownika i sugeruje przepis, który można przygotować z niektórych lub wszystkich tych składników. Nie musisz używać każdego składnika wymienionego przez użytkownika w przepisie. Przepis może zawierać dodatkowe składniki, których nie podano, ale postaraj się nie dodawać ich zbyt wiele. Sformatuj swoją odpowiedź w markdown, aby łatwiej było ją wyświetlić na stronie internetowej.`;
 
-const hf = new HfInterface(process.env.HF_ACCESS_TOKEN);
+const hf = new InferenceClient(process.env.HF_ACCESS_TOKEN);
 
 export async function getRecipe(ingredients) {
   const ingredientsString = ingredients.join(", ");

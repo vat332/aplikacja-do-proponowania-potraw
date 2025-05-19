@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ClaudeRecipe from "./ClaudeRecipe";
 import IngredientsList from "./IngredientsList";
-
+import { getRecipe } from "../ai";
 const Main = () => {
   const [ingredients, setIngredients] = useState([]);
   const [recipeShown, setRecipeShown] = useState(false);
@@ -11,7 +11,7 @@ const Main = () => {
   };
 
   const getRecipe = () => {
-    setRecipeShown((prev) => !prev);
+    getRecipe
   };
   return (
     <main>
