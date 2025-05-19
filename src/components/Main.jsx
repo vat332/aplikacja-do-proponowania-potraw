@@ -9,17 +9,12 @@ const Main = () => {
     </li>
   ));
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const newIngredient = formData.get("ingredient");
-    console.log(newIngredient);
-    setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
-    e.currentTarget.reset();
+  const handleSubmit = (formData) => {
+    setIngredients((prev) => [...prev, formData.get("ingredient")]);
   };
   return (
     <main>
-      <form className="add-ingredient-form" onSubmit={handleSubmit}>
+      <form className="add-ingredient-form" action={handleSubmit}>
         <input
           type="text"
           placeholder="masło"
