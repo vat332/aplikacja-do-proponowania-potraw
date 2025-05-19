@@ -150,15 +150,6 @@ ul.ingredients-list {
   margin: 1rem 0;
 }
 
-/* Styl pojedynczego składnika */
-.list-ingredient {
-  font-size: 2rem;
-  text-transform: capitalize;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-
 .loader::after {
   content: "";
   display: inline-block;
@@ -176,18 +167,22 @@ ul.ingredients-list {
     transform: rotate(360deg);
   }
 }
+.list-ingredient {
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
 
 .remove-btn {
-  margin-left: 1rem;
   background: none;
   border: none;
   color: red;
   font-size: 1.5rem;
   cursor: pointer;
-}
-
-.list-ingredient {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding: 0;
 }
