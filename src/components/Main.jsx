@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ClaudeRecipe from "./ClaudeRecipe";
+import IngredientsList from "./IngredientsList";
 
 const Main = () => {
   const [ingredients, setIngredients] = useState([]);
@@ -29,19 +30,7 @@ const Main = () => {
         <button type="submit">Dodaj składnik</button>
       </form>
       {ingredientListItems.length > 0 && (
-        <section>
-          <h2>Lista składników</h2>
-          <ul className="ingredients-list" aria-live="polite">
-            {ingredientListItems}
-          </ul>
-          <div className="get-recipe-container">
-            <div>
-              <h3>Gotowy na przepis?</h3>
-              <p>Wygeneruj przepis na podstawie składników</p>
-            </div>
-            <button onClick={toggleRecipeShown}>Generuj przepis</button>
-          </div>
-        </section>
+        <IngredientsList ingredients={ingredients} toggleRecipeShown={toggleRecipeShown} />
       )}
       {recipeShown && <ClaudeRecipe />}
     </main>
