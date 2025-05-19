@@ -47,12 +47,7 @@ p {
   font-weight: 400;
   margin: 0;
 }
-.list {
-  list-style: disc;
-  padding: 0;
-  margin: 0;
-  font-size: 1.6rem;
-}
+
 main {
   padding: 3rem 3rem 1rem;
 }
@@ -87,15 +82,22 @@ main {
 .add-ingredient-form > button:hover {
   background-color: #3e3e3b;
 }
-
+.input-ingredient {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #475467;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+}
+.input-ingredient:focus {
+  outline: none;
+  border: 1px solid #d17557;
+}
+.input-ingredient:hover {
+  border: 1px solid #d17557;
+}
 .add-ingredient-form > button::before {
   content: "+";
   margin-right: 0.5rem;
-}
-
-.list-ingredients {
-  font-size: 1.3rem;
-  font-weight: 400;
 }
 
 .get-recipe-container {
@@ -134,4 +136,20 @@ main {
   line-height: 2.8rem;
   font-size: 2rem;
   font-weight: 400;
+}
+
+/* Styl całej listy (np. ul) */
+ul.ingredients-list {
+  list-style: disc inside;
+  padding-left: 0;
+  margin: 1rem 0;
+}
+
+/* Styl pojedynczego składnika */
+.list-ingredient {
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #333;
 }

@@ -23,13 +23,14 @@ const Main = () => {
           placeholder="masło"
           aria-label="Dodaj składnik"
           name="ingredient"
+          className="input-ingredient"
         />
         <button type="submit">Dodaj składnik</button>
       </form>
       {ingredients.length > 0 && (
         <IngredientsList ingredients={ingredients} getRecipe={getRecipe} />
       )}
-      {recipe && <ClaudeRecipe recipe={recipe}/>}
+      {recipe && <ClaudeRecipe recipe={recipe} />}
     </main>
   );
 };

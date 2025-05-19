@@ -1,15 +1,13 @@
 const IngredientsList = (props) => {
   const ingredientListItems = props.ingredients.map((ingredient) => (
-    <li key={ingredient} className="list-ingredients">
+    <li key={ingredient} className="list-ingredient">
       {ingredient}
     </li>
   ));
   return (
     <section>
       <h2>Lista składników</h2>
-      <ul className="ingredients-list" aria-live="polite">
-        {ingredientListItems}
-      </ul>
+      <ul aria-live="polite">{ingredientListItems}</ul>
       <div className="get-recipe-container">
         <div>
           <h3>Gotowy na przepis?</h3>
