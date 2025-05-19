@@ -1,7 +1,8 @@
 import { useState } from "react";
+import getRecipeAi from "../ai";
 import ClaudeRecipe from "./ClaudeRecipe";
 import IngredientsList from "./IngredientsList";
-import { getRecipe } from "../ai";
+
 const Main = () => {
   const [ingredients, setIngredients] = useState([]);
   const [recipeShown, setRecipeShown] = useState(false);
@@ -10,8 +11,9 @@ const Main = () => {
     setIngredients((prev) => [...prev, formData.get("ingredient")]);
   };
 
-  const getRecipe = () => {
-    getRecipe
+  const getRecipe = async () => {
+    const generatedRecipe = await getRecipeAi(ingredients);
+    console.log(generatedRecipe);
   };
   return (
     <main>
