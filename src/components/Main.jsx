@@ -10,7 +10,7 @@ const Main = () => {
     setIngredients((prev) => [...prev, formData.get("ingredient")]);
   };
 
-  const toggleRecipeShown = () => {
+  const getRecipe = () => {
     setRecipeShown((prev) => !prev);
   };
   return (
@@ -25,10 +25,7 @@ const Main = () => {
         <button type="submit">Dodaj składnik</button>
       </form>
       {ingredients.length > 0 && (
-        <IngredientsList
-          ingredients={ingredients}
-          toggleRecipeShown={toggleRecipeShown}
-        />
+        <IngredientsList ingredients={ingredients} getRecipe={getRecipe} />
       )}
       {recipeShown && <ClaudeRecipe />}
     </main>
