@@ -23,7 +23,21 @@ const Main = () => {
         />
         <button type="submit">Dodaj składnik</button>
       </form>
-      <ul>{ingredientListItems}</ul>
+      {ingredientListItems.length > 0 && (
+        <section>
+          <h2>Lista składników</h2>
+          <ul className="ingredients-list" aria-live="polite">
+            {ingredientListItems}
+          </ul>
+          <div className="get-recipe-container">
+            <div>
+              <h3>Gotowy na przepis?</h3>
+              <p>Wygeneruj przepis na podstawie składników</p>
+            </div>
+            <button>Generuj przepis</button>
+          </div>
+        </section>
+      )}
     </main>
   );
 };

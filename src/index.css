@@ -74,3 +74,34 @@ main {
   font-size: 1.3rem;
   font-weight: 400;
 }
+
+.get-recipe-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.8rem;
+  background-color: #4d4c4734;
+  padding: 1rem 2.8rem;
+}
+
+.get-recipe-container h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2;
+}
+
+.get-recipe-container p {
+  color: #6b7280;
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+
+.get-recipe-container button {
+  border: none;
+  border-radius: 0.6rem;
+  background: #d17557;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  color: #fafaf8;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+}
