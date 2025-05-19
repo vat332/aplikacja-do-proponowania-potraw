@@ -5,7 +5,7 @@ import IngredientsList from "./IngredientsList";
 
 const Main = () => {
   const [ingredients, setIngredients] = useState([]);
-  const [recipeShown, setRecipeShown] = useState(false);
+  const [recipe, setRecipe] = useState("");
 
   const handleSubmit = (formData) => {
     setIngredients((prev) => [...prev, formData.get("ingredient")]);
@@ -13,7 +13,7 @@ const Main = () => {
 
   const getRecipe = async () => {
     const generatedRecipe = await getRecipeAi(ingredients);
-    console.log(generatedRecipe);
+    setRecipe(generatedRecipe);
   };
   return (
     <main>
@@ -29,7 +29,7 @@ const Main = () => {
       {ingredients.length > 0 && (
         <IngredientsList ingredients={ingredients} getRecipe={getRecipe} />
       )}
-      {recipeShown && <ClaudeRecipe />}
+      {recipe && <ClaudeRecipe recipe={recipe}/>}
     </main>
   );
 };
