@@ -2,8 +2,16 @@ const IngredientsList = (props) => {
   const ingredientListItems = props.ingredients.map((ingredient) => (
     <li key={ingredient} className="list-ingredient">
       {ingredient}
+      <button
+        className="remove-btn"
+        onClick={() => props.removeIngredient(ingredient)}
+        aria-label={`Usuń składnik ${ingredient}`}
+      >
+        ✕
+      </button>
     </li>
   ));
+
   return (
     <section>
       <h2>Lista składników</h2>

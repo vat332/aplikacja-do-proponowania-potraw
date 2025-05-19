@@ -6,15 +6,27 @@ import IngredientsList from "./IngredientsList";
 const Main = () => {
   const [ingredients, setIngredients] = useState([]);
   const [recipe, setRecipe] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = (formData) => {
     setIngredients((prev) => [...prev, formData.get("ingredient")]);
   };
+  const removeIngredient = (ingredientToRemove) => {
+    setIngredients((prev) => prev.filter((i) => i !== ingredientToRemove));
+  };
 
   const getRecipe = async () => {
-    const generatedRecipe = await getRecipeAi(ingredients);
-    setRecipe(generatedRecipe);
+    setIsLoading(true); // pokaż loader
+    try {
+      const generatedRecipe = await getRecipeAi(ingredients);
+      setRecipe(generatedRecipe);
+    } catch (error) {
+      console.error("Błąd podczas generowania przepisu:", error);
+    } finally {
+      setIsLoading(false); // ukryj loader
+    }
   };
+
   return (
     <main>
       <form className="add-ingredient-form" action={handleSubmit}>
@@ -28,9 +40,14 @@ const Main = () => {
         <button type="submit">Dodaj składnik</button>
       </form>
       {ingredients.length > 0 && (
-        <IngredientsList ingredients={ingredients} getRecipe={getRecipe} />
+        <IngredientsList
+          ingredients={ingredients}
+          getRecipe={getRecipe}
+          removeIngredient={removeIngredient}
+        />
       )}
-      {recipe && <ClaudeRecipe recipe={recipe} />}
+      {isLoading && <p className="loader">Generowanie przepisu...</p>}
+      {!isLoading && recipe && <ClaudeRecipe recipe={recipe} />}
     </main>
   );
 };
