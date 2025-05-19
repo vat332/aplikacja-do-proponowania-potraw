@@ -1,14 +1,12 @@
+import { useState } from "react";
+
 const Main = () => {
-  const ingredients = [
-    "Kurczak",
-    "Cebula",
-    "Masło",
-    "Czosnek",
-    "Papryka",
-    "Sól",
-  ];
+  const [ingredients, setIngredients] = useState([]);
+
   const ingredientListItems = ingredients.map((ingredient) => (
-    <li key={ingredient}>{ingredient}</li>
+    <li key={ingredient} className="list-ingredients">
+      {ingredient}
+    </li>
   ));
 
   const handleSubmit = (e) => {
@@ -16,7 +14,8 @@ const Main = () => {
     const formData = new FormData(e.currentTarget);
     const newIngredient = formData.get("ingredient");
     console.log(newIngredient);
-    ingredients.push(newIngredient);
+    setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
+    e.currentTarget.reset();
   };
   return (
     <main>

@@ -69,3 +69,8 @@ main {
   content: "+";
   margin-right: 0.5rem;
 }
+
+.list-ingredients {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
