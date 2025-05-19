@@ -128,3 +128,10 @@ main {
   font-weight: 600;
   padding: 1rem 1.5rem;
 }
+
+.suggested-recipe-container {
+  color: #475467;
+  line-height: 2.8rem;
+  font-size: 2rem;
+  font-weight: 400;
+}
