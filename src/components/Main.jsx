@@ -1,8 +1,9 @@
 import { useState } from "react";
+import ClaudeRecipe from "./ClaudeRecipe";
 
 const Main = () => {
   const [ingredients, setIngredients] = useState([]);
-
+  const [recipeShown, setRecipeShown] = useState(false);
   const ingredientListItems = ingredients.map((ingredient) => (
     <li key={ingredient} className="list-ingredients">
       {ingredient}
@@ -11,6 +12,10 @@ const Main = () => {
 
   const handleSubmit = (formData) => {
     setIngredients((prev) => [...prev, formData.get("ingredient")]);
+  };
+
+  const toggleRecipeShown = () => {
+    setRecipeShown((prev) => !prev);
   };
   return (
     <main>
@@ -34,10 +39,11 @@ const Main = () => {
               <h3>Gotowy na przepis?</h3>
               <p>Wygeneruj przepis na podstawie składników</p>
             </div>
-            <button>Generuj przepis</button>
+            <button onClick={toggleRecipeShown}>Generuj przepis</button>
           </div>
         </section>
       )}
+      {recipeShown && <ClaudeRecipe />}
     </main>
   );
 };
