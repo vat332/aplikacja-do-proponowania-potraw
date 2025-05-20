@@ -38,18 +38,28 @@ const Main = () => {
   };
 
   return (
-    <main>
-      <p className="text-3xl">test</p>
-      <form className="add-ingredient-form" action={handleSubmit}>
-        <input
-          type="text"
-          placeholder="masło"
-          aria-label="Dodaj składnik"
-          name="ingredient"
-          className="input-ingredient"
-        />
-        <button type="submit">Dodaj składnik</button>
-      </form>
+    <main className="mx-auto max-w-[90vw] px-4 py-8">
+      <div className="h-40">
+        <form className="flex justify-center gap-1" action={handleSubmit}>
+          <div className="w-full rounded-md bg-gradient-to-r from-[#dd6d48] to-[#eea992] p-[2px] dark:from-[#9507ee] dark:to-[#b5b1e7]">
+            <input
+              type="text"
+              placeholder="masło"
+              aria-label="Dodaj składnik"
+              name="ingredient"
+              className="w-full rounded-md border-none bg-white p-3 font-bold text-[#212020] focus:outline-none"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="rounded-md bg-[#dd6d48] p-1 font-bold text-white hover:opacity-70 focus:outline-none dark:bg-[#9507ee]"
+          >
+            Dodaj składnik
+          </button>
+        </form>
+      </div>
+
       {ingredients.length > 0 && (
         <IngredientsList
           ingredients={ingredients}
