@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import getRecipeAi from "../ai";
 import ClaudeRecipe from "./ClaudeRecipe";
 import IngredientsList from "./IngredientsList";
+import Loader from "./Loader";
 
 const Main = () => {
   const [ingredients, setIngredients] = useState([]);
@@ -24,7 +25,9 @@ const Main = () => {
   const removeIngredient = (ingredientToRemove) => {
     setIngredients((prev) => prev.filter((i) => i !== ingredientToRemove));
   };
-
+  useEffect(() => {
+    document.body.style.overflow = isLoading ? "hidden" : "auto";
+  }, [isLoading]);
   const getRecipe = async () => {
     setIsLoading(true);
     try {
@@ -71,7 +74,8 @@ const Main = () => {
           ref={recipeSection}
         />
       )}
-      {isLoading && <p className="loader">Generowanie przepisu...</p>}
+      <Loader />
+      {isLoading && <Loader isLoading={isLoading} />}
       {!isLoading && recipe && <ClaudeRecipe recipe={recipe} />}
     </main>
   );
