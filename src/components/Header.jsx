@@ -3,7 +3,7 @@ import LogoDark from "../public/images/logo.svg";
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-center gap-3 bg-[#FAFAFA] pb-2 shadow-md shadow-gray-200 md:shadow-lg dark:bg-[#272d53] dark:shadow-gray-800">
+    <header className="fixed flex w-full items-center justify-center gap-3 bg-[#FAFAFA] pb-2 shadow-md shadow-gray-200 md:shadow-lg dark:bg-[#272d53] dark:shadow-gray-800">
       <img src={LogoDark} alt="logo_icon" className="w-12 dark:hidden" />
       <img
         src={LogoLight}
