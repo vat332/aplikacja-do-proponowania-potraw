@@ -43,6 +43,7 @@ const Main = () => {
 
   return (
     <main>
+      <p className="text-3xl">test</p>
       <form className="add-ingredient-form" action={handleSubmit}>
         <input
           type="text"
