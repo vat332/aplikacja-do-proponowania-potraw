@@ -1,15 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap");
 @import "tailwindcss";
+
 @theme {
-  --font-sans: Roboto, sans-serif;
+  --font-sans: "Roboto", sans-serif;
   --color-accent: #d17557;
+  --color-pattern: rgba(209, 117, 87, 0.3);
 }
 
 @layer base {
   h1 {
-    font-size: var(--text-2xl);
+    @apply text-accent text-3xl font-bold md:text-4xl;
   }
   h2 {
-    font-size: var(--text-xl);
+    @apply text-accent text-2xl font-semibold md:text-3xl;
+  }
+  body {
+    @apply min-h-screen antialiased;
+  }
+}
+
+@layer components {
+  .bodyPattern {
+    background-color: var(--color-bg);
+    background-image:
+      radial-gradient(var(--color-pattern) 1.5px, transparent 1.5px),
+      radial-gradient(var(--color-pattern) 1.5px, transparent 1.5px);
+    background-size: 30px 30px;
+    background-position:
+      0 0,
+      15px 15px;
   }
 }
