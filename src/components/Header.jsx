@@ -15,7 +15,7 @@ const Header = (props) => {
       </h1>
       <button
         onClick={props.toggleDarkMode}
-        className="fixed top-4 right-4 rounded-full bg-gray-200 p-2 dark:bg-gray-700"
+        className="fixed top-6 right-6 scale-150 rounded-full bg-gray-200 p-2 dark:bg-gray-600"
       >
         {props.isDark ? "☀️" : "🌙"}
       </button>
