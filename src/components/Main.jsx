@@ -15,6 +15,11 @@ const Main = () => {
         behavior: "smooth",
         block: "start",
       });
+      // const yCoord = recipeSection.current.getBoundingClientRect().top;
+      // window.scrollTo({
+      //   top: yCoord,
+      //   behavior: "smooth",
+      // });
     }
   }, [recipe]);
   const handleSubmit = (formData) => {
