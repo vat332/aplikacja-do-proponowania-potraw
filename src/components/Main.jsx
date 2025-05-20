@@ -11,15 +11,11 @@ const Main = () => {
 
   useEffect(() => {
     if (recipe !== "" && recipeSection.current !== null) {
-      recipeSection.current.scrollIntoView({
+      const yCoord = recipeSection.current.getBoundingClientRect().top;
+      window.scrollTo({
+        top: yCoord,
         behavior: "smooth",
-        block: "start",
       });
-      // const yCoord = recipeSection.current.getBoundingClientRect().top;
-      // window.scrollTo({
-      //   top: yCoord,
-      //   behavior: "smooth",
-      // });
     }
   }, [recipe]);
   const handleSubmit = (formData) => {
