@@ -42,7 +42,7 @@ const Main = () => {
       <div className="h-40">
         <form
           className="flex justify-center gap-1 md:justify-center"
-          onSubmit={handleSubmit}
+          action={handleSubmit}
         >
           <div className="w-full rounded-md bg-gradient-to-r from-[#dd6d48] to-[#eea992] p-[2px] dark:from-[#9507ee] dark:to-[#b5b1e7]">
             <input
