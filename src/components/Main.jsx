@@ -41,7 +41,7 @@ const Main = () => {
   };
 
   return (
-    <main className="mx-auto max-w-[90vw] px-4 py-8 md:w-[60vw] md:pt-20">
+    <main className="mx-auto max-w-[90vw] overflow-hidden px-4 py-8 md:w-[60vw] md:pt-20">
       <div className="mt-30 mb-8 text-center md:mt-20">
         <h1 className="mb-4 text-3xl font-bold text-[#dd6d48] md:text-4xl dark:text-[#9507ee]">
           Odkryj magiczne połączenia smaków!
