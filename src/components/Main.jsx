@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import getRecipeAi from "../ai";
 import ClaudeRecipe from "./ClaudeRecipe";
 import IngredientsList from "./IngredientsList";
@@ -7,7 +7,16 @@ const Main = () => {
   const [ingredients, setIngredients] = useState([]);
   const [recipe, setRecipe] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const recipeSection = useRef(null);
 
+  useEffect(() => {
+    if (recipe !== "" && recipeSection.current !== null) {
+      recipeSection.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [recipe]);
   const handleSubmit = (formData) => {
     setIngredients((prev) => [...prev, formData.get("ingredient")]);
   };
@@ -16,14 +25,14 @@ const Main = () => {
   };
 
   const getRecipe = async () => {
-    setIsLoading(true); // pokaż loader
+    setIsLoading(true);
     try {
       const generatedRecipe = await getRecipeAi(ingredients);
       setRecipe(generatedRecipe);
     } catch (error) {
       console.error("Błąd podczas generowania przepisu:", error);
     } finally {
-      setIsLoading(false); // ukryj loader
+      setIsLoading(false);
     }
   };
 
@@ -44,6 +53,7 @@ const Main = () => {
           ingredients={ingredients}
           getRecipe={getRecipe}
           removeIngredient={removeIngredient}
+          ref={recipeSection}
         />
       )}
       {isLoading && <p className="loader">Generowanie przepisu...</p>}

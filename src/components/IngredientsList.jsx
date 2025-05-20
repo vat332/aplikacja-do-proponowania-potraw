@@ -17,7 +17,7 @@ const IngredientsList = (props) => {
       <h2>Lista składników</h2>
       <ul aria-live="polite">{ingredientListItems}</ul>
       <div className="get-recipe-container">
-        <div>
+        <div ref={props.ref}>
           <h3>Gotowy na przepis?</h3>
           <p>Wygeneruj przepis na podstawie składników</p>
         </div>
