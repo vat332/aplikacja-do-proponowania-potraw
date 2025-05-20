@@ -42,8 +42,7 @@ const Main = () => {
 
   return (
     <main className="mx-auto max-w-[90vw] px-4 py-8 md:w-[60vw] md:pt-20">
-      {/* Sekcja z tekstem zachęcającym */}
-      <div className="mb-8 text-center">
+      <div className="mt-30 mb-8 text-center md:mt-20">
         <h1 className="mb-4 text-3xl font-bold text-[#dd6d48] md:text-4xl dark:text-[#9507ee]">
           Odkryj magiczne połączenia smaków!
         </h1>
@@ -53,7 +52,7 @@ const Main = () => {
         </p>
       </div>
 
-      <div className="h-40">
+      <div className="h-20">
         <form
           className="flex justify-center gap-1 md:justify-center"
           action={handleSubmit}
@@ -77,8 +76,7 @@ const Main = () => {
         </form>
       </div>
 
-      {/* Dodatkowy tekst pomocniczy */}
-      <div className="mt-2 text-center text-sm text-gray-500 dark:text-gray-400">
+      <div className="mb-10 text-center text-sm text-gray-500 md:mb-4 dark:text-gray-400">
         <p>Dodaj przynajmniej 3 składniki, aby otrzymać najlepsze przepisy</p>
       </div>
 
@@ -94,9 +92,8 @@ const Main = () => {
       {isLoading && <Loader isLoading={isLoading} />}
       {!isLoading && recipe && <ClaudeRecipe recipe={recipe} />}
 
-      {/* Sekcja z benefitami - widoczna tylko na desktopach */}
-      <div className="mt-12 hidden grid-cols-3 gap-6 md:grid">
-        <div className="rounded-lg bg-white/80 p-4 text-center shadow-md dark:bg-gray-800/80">
+      <div className="mt-12 grid-cols-3 gap-6 md:grid">
+        <div className="mb-5 rounded-lg bg-white/80 p-4 text-center shadow-md dark:bg-gray-800/80">
           <h3 className="mb-2 text-lg font-semibold text-[#dd6d48] dark:text-[#b5b1e7]">
             ⚡ Szybko
           </h3>
@@ -104,7 +101,7 @@ const Main = () => {
             Przepisy w mniej niż 30 sekund
           </p>
         </div>
-        <div className="rounded-lg bg-white/80 p-4 text-center shadow-md dark:bg-gray-800/80">
+        <div className="mb-5 rounded-lg bg-white/80 p-4 text-center shadow-md dark:bg-gray-800/80">
           <h3 className="mb-2 text-lg font-semibold text-[#dd6d48] dark:text-[#b5b1e7]">
             🍎 Zdrowo
           </h3>
@@ -112,7 +109,7 @@ const Main = () => {
             Zrównoważone kombinacje składników
           </p>
         </div>
-        <div className="rounded-lg bg-white/80 p-4 text-center shadow-md dark:bg-gray-800/80">
+        <div className="mb-5 rounded-lg bg-white/80 p-4 text-center shadow-md dark:bg-gray-800/80">
           <h3 className="mb-2 text-lg font-semibold text-[#dd6d48] dark:text-[#b5b1e7]">
             🧑‍🍾 Profesjonalnie
           </h3>

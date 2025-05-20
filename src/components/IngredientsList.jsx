@@ -2,7 +2,7 @@ const IngredientsList = (props) => {
   const ingredientListItems = props.ingredients.map((ingredient) => (
     <li
       key={ingredient}
-      className="mx-4 my-1 flex items-center gap-2 font-bold capitalize"
+      className="mx-4 my-1 flex items-center justify-center gap-2 font-bold capitalize"
     >
       {ingredient}
       <button
