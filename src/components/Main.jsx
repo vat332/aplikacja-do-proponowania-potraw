@@ -38,9 +38,12 @@ const Main = () => {
   };
 
   return (
-    <main className="mx-auto max-w-[90vw] px-4 py-8">
+    <main className="mx-auto max-w-[90vw] px-4 py-8 md:w-[60vw] md:pt-20">
       <div className="h-40">
-        <form className="flex justify-center gap-1" action={handleSubmit}>
+        <form
+          className="flex justify-center gap-1 md:justify-center"
+          onSubmit={handleSubmit}
+        >
           <div className="w-full rounded-md bg-gradient-to-r from-[#dd6d48] to-[#eea992] p-[2px] dark:from-[#9507ee] dark:to-[#b5b1e7]">
             <input
               type="text"
@@ -53,7 +56,7 @@ const Main = () => {
 
           <button
             type="submit"
-            className="rounded-md bg-[#dd6d48] p-1 font-bold text-white hover:opacity-70 focus:outline-none dark:bg-[#9507ee]"
+            className="rounded-md bg-[#dd6d48] p-1 px-4 font-bold text-white hover:opacity-70 focus:outline-none dark:bg-[#9507ee]"
           >
             Dodaj składnik
           </button>
